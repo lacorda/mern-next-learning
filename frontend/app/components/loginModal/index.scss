@@ -1,0 +1,14 @@
+$prefix: "mern-login-modal";
+
+.#{$prefix} {
+  .#{$antdModal} {
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .ant-form,
+  .ant-form-item {
+    width: 100%;
+  }
+}
