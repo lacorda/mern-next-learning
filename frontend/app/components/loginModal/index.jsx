@@ -4,9 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { createBEM } from '@lacorda/bem';
 import { Modal, Form, Input, Select, Button, Checkbox } from 'antd';
 import { useUpdateEffect } from 'ahooks';
+import fetchAPI from '@/app/utils/fetch';
 import './index.scss';
 
-const { Option } = Select;
 const bem = createBEM('mern-login-modal');
 
 const LoginModal = (props) => {
@@ -38,8 +38,17 @@ const LoginModal = (props) => {
     onClose?.();
   }
 
+  /**
+   * TODO
+   * 1. 调用check接口；若未注册，则调用register接口；若已注册，则调用login接口
+   */
   const onSubmit = (values) => {
     console.log('🍄  onSubmit', values);
+    fetchAPI.post('/api/v1/auth/checkLogin', values).then((res) => {
+      console.log('🍄  res', res);
+    }).catch((err) => {
+      console.log('🍄  err', err);
+    })
   }
 
   const onSubmitFailed = (errorInfo) => {

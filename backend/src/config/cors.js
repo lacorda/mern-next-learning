@@ -1,10 +1,6 @@
 const allowedOrigins = [
-  "http://localhost:3001",
-  // "http://localhost:3034",
-  // "http://localhost:5500",
-  // "https://api-beach-resort.srmukul.com",
-  // "https://admin-beach-resort.vercel.app",
-  // "https://mukul-beach-resort.vercel.app",
+  // 本地frontend域名
+  "http://localhost:3002",
 ];
 
 const corsOptions = {
